@@ -73,7 +73,7 @@ namespace SharpFileSystem.FileSystems
         {
             if (!path.IsFile)
                 throw new ArgumentException("The specified path is not a file.", "path");
-            return System.IO.File.Open(GetPhysicalPath(path), FileMode.Open, access);
+			return System.IO.File.Open(GetPhysicalPath(path), FileMode.Open, access, FileShare.ReadWrite);
         }
 
         public void CreateDirectory(FileSystemPath path)
